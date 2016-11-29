@@ -1,0 +1,26 @@
+{
+  "name": "react-native-screenshot-observer",
+  "version": "0.1.0",
+  "description": "iOS截屏手势捕获通知",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WangZiXiao-ChenDu/react-native-screenshot-observer.git"
+  },
+  "keywords": [
+    "screenshot",
+    "observer",
+    "Notification"
+  ],
+  "author": "WangZiXiao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WangZiXiao-ChenDu/react-native-screenshot-observer/issues"
+  },
+  "homepage": "https://github.com/WangZiXiao-ChenDu/react-native-screenshot-observer#readme"
+}
