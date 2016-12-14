@@ -40,12 +40,21 @@ RCT_EXPORT_METHOD(removeObserver:(NSString *)notificationName)
     //把图片存沙盒
     NSString *path_sandox = NSHomeDirectory();
     //设置一个图片的存储路径
-    NSString *imagePath = [path_sandox stringByAppendingString:@"/Documents/Screenshot.png"];
+    NSString *imagePath = [path_sandox stringByAppendingString:@"/Documents/Screenshot.jpg"];
     //把图片直接保存到指定的路径
-    [UIImagePNGRepresentation(image_) writeToFile:imagePath atomically:YES];
+    NSError *error;
     
-    [self.bridge.eventDispatcher sendDeviceEventWithName:@"ScreenshotObserver"
-                                                    body:@{ @"imagePath": imagePath ? imagePath : [NSNull null] }];
+    NSData *data = UIImageJPEGRepresentation(image_, 0.5);
+    
+    BOOL writeSucceeded = [data writeToFile:imagePath options:0 error:&error];
+    if (!writeSucceeded) {
+        NSLog( @"图片保存沙盒失败" );
+        image_ = nil;
+    } else {
+        NSLog( @"保存到document %@", imagePath );
+        [self.bridge.eventDispatcher sendDeviceEventWithName:@"ScreenshotObserver"
+                                                        body:@{ @"imagePath": imagePath ? imagePath : [NSNull null] }];
+    }
 }
 
 // 返回截取到的图片
