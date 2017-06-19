@@ -1,6 +1,6 @@
 {
   "name": "react-native-screenshot-observer",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "iOS截屏手势捕获通知",
   "main": "index.js",
   "dependencies": {},
