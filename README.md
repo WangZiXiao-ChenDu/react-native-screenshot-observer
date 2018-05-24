@@ -23,14 +23,14 @@ import {
 
 class App extends React.Component {
   componentWillUnmount () {
-    subscription.remove();
+    this.screenshotObserver.remove();
   }
 
   render() {
     return (
       const RNScreenshotNotification = NativeModules.RNScreenshotNotification;
 
-      subscription = DeviceEventEmitter.addListener('ScreenshotObserver', (data) => { this.setState({ screenShotUri: data.imagePath }) });
+      this.screenshotObserver = DeviceEventEmitter.addListener('ScreenshotObserver', (data) => { this.setState({ screenShotUri: data.imagePath }) });
       RNScreenshotNotification.addObserverScreenshot();
     )
   }
