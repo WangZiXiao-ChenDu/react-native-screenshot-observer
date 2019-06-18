@@ -2,7 +2,8 @@
 Installation can be done through ``npm``:
 
 ```shell
-npm i react-native-screenshot-observer --save
+$ npm i react-native-screenshot-observer --save
+$ react-native link react-native-screenshot-observer
 ```
 
 ## Usage
